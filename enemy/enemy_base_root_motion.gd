@@ -132,15 +132,16 @@ func evaluate_state(): ## depending on distance to target, run or walk
 
 func _on_combat_timer_timeout():
 	if current_state == state.COMBAT:
-		combat_randomizer()
-			
+		attack()
+		#combat_randomizer()
+		
 func combat_randomizer():
 	var random_choice = randi_range(1,10)
 	if random_choice <= 3:
 		retreat()
 	else:
 		attack()
-		
+	
 func attack():
 	attack_started.emit()
 	

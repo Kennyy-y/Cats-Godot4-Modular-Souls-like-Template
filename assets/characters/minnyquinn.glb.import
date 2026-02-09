@@ -15,8 +15,12 @@ dest_files=["res://.godot/imported/minnyquinn.glb-81bcd1ada629a7bdf892827716c605
 
 nodes/root_type=""
 nodes/root_name=""
+nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
@@ -28,28 +32,37 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
 import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
 _subresources={
 "materials": {
 "Cloth": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/scalemail.tres"
+"use_external/fallback_path": "res://assets/scalemail.tres",
+"use_external/path": "uid://bowx43bo6q316"
 },
 "Eyes": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/characters/eyes.tres"
+"use_external/fallback_path": "res://assets/characters/eyes.tres",
+"use_external/path": "uid://b513rxekm2q4s"
 },
 "Hair": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/characters/hair_material.tres"
+"use_external/fallback_path": "res://assets/characters/hair_material.tres",
+"use_external/path": "uid://ubep5t2j71nn"
 },
 "Metal": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/metal_blue.tres"
+"use_external/fallback_path": "res://assets/metal_blue.tres",
+"use_external/path": "uid://bqecby27hsm6w"
 },
 "Skin": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/characters/skin_f.tres"
+"use_external/fallback_path": "res://assets/characters/skin_f.tres",
+"use_external/path": "uid://cb6ni8agv3svk"
 }
 },
 "nodes": {

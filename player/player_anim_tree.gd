@@ -85,9 +85,9 @@ func _process(_delta):
 	set_guarding()
 
 
-func request_oneshot(oneshot:String):
+func request_oneshot(oneshot: String) -> void:
 	last_oneshot = oneshot
-	set("parameters/" + oneshot + "/request",true)
+	set("parameters/%s/request" % oneshot, AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 
 func _on_landed_fall(_hard_or_soft = "HARD"):
 	landing_type = _hard_or_soft
@@ -125,8 +125,8 @@ func _on_hurt_started(): ## Picks a hurt animation between "Hurt1" and "Hurt2"
 		request_oneshot("Hurt")
 		current_weapon_tree.start("MoveStrafe")
 		
-func abort_oneshot(_last_oneshot:String):
-	set("parameters/" + _last_oneshot + "/request",AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT)
+func abort_oneshot(_last_oneshot: String) -> void:
+	set("parameters/%s/request" % _last_oneshot, AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT)
 
 	
 func _on_death_started():
@@ -158,12 +158,13 @@ func _on_weapon_change_started():
 
 func _on_weapon_change_ended(_new_weapon_type):
 	# if a wapon tree exixts, swap to it, otherwise, just use the "SLASH_tree" for rmovements.
-	var weapon_tree_exists = tree_root.get_node("MovementStates").has_node(str(_new_weapon_type)+"_tree")
+	var weapon_tree_exists = tree_root.get_node("MovementStates").has_node(str(_new_weapon_type) + "_tree")
 	if weapon_tree_exists:
 		weapon_type = _new_weapon_type
 	else:
 		weapon_type = "SLASH"
-	current_weapon_tree = get("parameters/MovementStates/"+str(_new_weapon_type)+"_tree/playback")
+
+	current_weapon_tree = get("parameters/MovementStates/%s_tree/playback" % weapon_type)
 
 func _on_gadget_change_started():
 	request_oneshot("GadgetChange")
